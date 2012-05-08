@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Score.delete_all
+Score.create(:name => 'test1', :score =>5)
+Score.create(:name => 'test2', :score =>8)
