@@ -1,6 +1,5 @@
 var guessesLeft = 10;
 var highScores = [];
-//var setNum = 50;
 var setNum = Math.floor(Math.random()*100) + 1;
 
 $(function() {
@@ -20,7 +19,6 @@ function populateHighScores() {
 
 function updateGuesses()
 {
-	//document.getElementById("guessesLeft").innerHTML = guessesLeft;
 	guessesLeft = guessesLeft -1;
 	$("#guessesLeft").html(guessesLeft);
 	if(guessesLeft < 1)
@@ -31,7 +29,7 @@ function updateGuesses()
 
 function tooHigh(guess)
 {
-	//alert("too high");
+
 	$("#message").html(guess + " was too high!");
 }
 
@@ -48,15 +46,13 @@ function lose()
 function again(preMessage)
 {
 	$("#message").html(preMessage + " <a href=\"javascript:location.reload(true)\">Play again?</a>");
-//	$("$btnguess").disable();
+
 }
 
 function win()
 {
 	var name=prompt("Congrats! What's your name?", "Yong Bakos");
-	//highScores = new Array([34, "yourmom"], [9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
-	//var newScore = new Array([guessesLeft, name]);
-	//populateHighScores(newScore);
+
 	if(name.length > 0)
 	{
 		$.post('/scores', {score: {name: name, score: guessesLeft}})
@@ -84,7 +80,6 @@ function checkGuess()
 		win();
 	}
 
-//	alert("test");
 }
 
 function updateScore(score) {
