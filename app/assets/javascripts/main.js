@@ -1,7 +1,7 @@
 var guessesLeft = 10;
 var highScores = [];
-var setNum = 50;
-//var setNum = Math.floor(Math.random()*100) + 1;
+//var setNum = 50;
+var setNum = Math.floor(Math.random()*100) + 1;
 
 $(function() {
   updateScore(guessesLeft);
